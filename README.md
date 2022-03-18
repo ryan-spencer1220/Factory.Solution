@@ -21,6 +21,8 @@
 
 This application was designed for a fictional manufacturing company utilizing C# and MySQL. The goal of the project was to create an application that allows Dr. Sillystringz to create, read, update, and delete both engineers working for the company and machines that the business owns. This applicaiton demonstrates an understanding of a "many-to-many" relationship between engineers and machines, an engineer can be licensed to operate on multiple machines and a machine can have multiple engineers assigned for repairs.
 
+<img width="982" alt="Screen Shot 2022-03-18 at 4 33 45 PM" src="https://user-images.githubusercontent.com/86761275/159097027-f9550327-3e8d-404d-8343-441b066c4160.png">
+
 ## Setup/Installation Requirements
 
 **Cloning**
