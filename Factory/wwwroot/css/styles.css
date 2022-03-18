@@ -18,3 +18,11 @@ h2,
 h3 {
   text-align: center;
 }
+
+#button-one {
+  margin-left: 50%;
+}
+
+#button-two {
+  margin-left: 50%;
+}

@@ -32,5 +32,5 @@
   </section>
   }
 
-<p>@Html.ActionLink("Add new engineer", "Create")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<p>@Html.ActionLink("Add Engineer", "Create", routeValues: null, htmlAttributes: new { @class = "btn btn-primary", @role="button" })</p>
+<p>@Html.ActionLink("Home", "Index", "Home", routeValues: null, htmlAttributes: new { @class = "btn btn-primary", @role="button" })</p>

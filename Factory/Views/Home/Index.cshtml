@@ -2,4 +2,24 @@
   Layout = "_Layout";
 }
 
-<p>@Html.ActionLink("See All Machines", "Index", "Machines")</p> <p>@Html.ActionLink("See All Engineers", "Index", "Engineers")</p>
+<section class="bg-light">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
+            <div class="col-12 col-lg-5">
+                <h2 class="display-4 lh-1 mb-4">Welcome to Dr. Sillystringz's management system!</h2>
+                <p class="lead fw-normal text-muted mb-5 mb-lg-0">This application was designed to create, read, update, and delete engineers and machines.</p>
+            </div>
+            <div class="col-sm-8 col-md-6">
+                <div class="px-5 px-sm-0"><img class="img-fluid rounded-circle" src="https://source.unsplash.com/u8Jn2rzYIps/900x900" alt="..." /></div>
+            </div>
+          <div class="row">
+            <div id="button-one">
+              <p>@Html.ActionLink("See All Machines", "Index", "Machines", routeValues: null, htmlAttributes: new { @class = "btn btn-primary", @role="button" })</p> 
+            </div>
+            <div id="button-two">
+              <p>@Html.ActionLink("See All Engineers", "Index", "Engineers", routeValues: null, htmlAttributes: new { @class = "btn btn-primary", @role="button" })</p>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>

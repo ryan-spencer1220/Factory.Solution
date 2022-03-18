@@ -4,23 +4,32 @@
 
 @model Factory.Models.Machine
 
-<h4>Add New Machine</h4>
+<h4 class="display-4 lh-1 mb-4">Add New Machine</h4>
 
+<div class="col-12 col-lg-5">
 @using (Html.BeginForm())
-{
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name,
-    new {required="required"})
+  {
+    <div class="form-group">
+      <p>Machine Name</p>
+      @Html.TextBoxFor(model => model.Name,
+      new {required="required"})
+    </div>
+    <div class="form-group">
+      <p>Machine Status</p>
+      @Html.TextBoxFor(model => model.MachineStatus)
+    </div>
+    <div class="form-group">
+      <p>Inspection Date</p>
+      @Html.TextBoxFor(model => model.InspectionDate, new { type = "date" })
+    </div>
+    <div class="form-group">
+      @Html.Label("Select Engineer")
+      @Html.DropDownList("EngineerId", "Please Select Engineer")
+    </div>
+      <input type="submit" value="Add new machine" class="btn btn-primary" />
+  }
+</div>
 
-    @Html.LabelFor(model => model.MachineStatus)
-    @Html.TextBoxFor(model => model.MachineStatus)
-
-    @Html.LabelFor(model => model.InspectionDate)
-    @Html.TextBoxFor(model => model.InspectionDate, new { type = "date" })
-
-    @Html.Label("Select engineer")
-    @Html.DropDownList("EngineerId")
-
-    <input type="submit" value="Add new machine" class="btn btn-primary" />
-}
+<div class="col-12 col-lg-5">
 <p>@Html.ActionLink("Show all machines", "Index")</p>
+</div>

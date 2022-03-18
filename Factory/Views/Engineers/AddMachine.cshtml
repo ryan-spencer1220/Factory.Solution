@@ -4,18 +4,18 @@
 
 @model Factory.Models.Engineer
 
-<h2>Add Machine</h2>
+<h4 class="display-4 lh-1 mb-4">Add Machine To @Html.DisplayFor(model => model.Name)</h4>
 
-<h4>Add machine license to this engineer: @Html.DisplayFor(model => model.Name)</h4>
-
-@using (Html.BeginForm())
-{
-    @Html.HiddenFor(model => model.EngineerId)
-
-    @Html.Label("Select machine")
-    @Html.DropDownList("MachineId")
-
-    <input type="submit" value="Save" />
-}
+<div class="lead fw-normal text-muted mb-5 mb-lg-0">
+  @using (Html.BeginForm())
+  {
+      @Html.HiddenFor(model => model.EngineerId)
+    <div class="form-group">
+      @Html.Label("Select machine")
+      @Html.DropDownList("MachineId")
+    </div>
+      <input type="submit" value="Save" class="btn btn-primary"/>
+  }
+</div>
 
 <p>@Html.ActionLink("Back to list", "Index")</p>

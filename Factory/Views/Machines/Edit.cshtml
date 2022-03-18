@@ -4,28 +4,30 @@
 
 @model Factory.Models.Machine
 
-<h2>Edit</h2>
+<h2 class="display-4 lh-1 mb-4">Edit @Html.DisplayFor(model => model.Name)</h2>
 
-<h4>Edit Machine: @Html.DisplayFor(model => model.Name)</h4>
+<div class="col-12 col-lg-5">
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.MachineId)
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.MachineId)
-
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name,
-  new {required="required"})
-
-  @Html.LabelFor(model => model.MachineStatus)
-  @Html.EditorFor(model => model.MachineStatus)
-
-  @Html.LabelFor(model => model.InspectionDate)
-  @Html.EditorFor(model => model.InspectionDate)
-
-  @Html.Label("Select engineer")
-  @Html.DropDownList("EngineerId")
-
-  <input type="submit" value="Save" />
-}
-
-<p>@Html.ActionLink("Back to list", "Index")</p>
+    <div class="form-group">
+      <p>Machine Name</p>
+      @Html.TextBoxFor(model => model.Name,
+      new {required="required"})
+    </div>
+    <div class="form-group">
+      <p>Machine Status</p>
+      @Html.EditorFor(model => model.MachineStatus)
+    </div>
+    <div class="form-group">
+      <p>Inspection Date</p>
+      @Html.EditorFor(model => model.InspectionDate)
+    </div>
+    <div class="form-group">
+      @Html.Label("Select Engineer")
+      @Html.DropDownList("EngineerId")
+    </div>
+    <input type="submit" value="Save" class="btn btn-primary"/>
+  }
+</div>
