@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SillystringFactory.Models.Machine
+
+<h2>Delete Engineer</h2>
+
+<h4>Delete Engineer Assoicated With This Machine: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.MachineId)
+
+    @Html.Label("Select engineer")
+    @Html.DropDownList("EngineerId")
+
+    <input type="submit" value="Delete" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
