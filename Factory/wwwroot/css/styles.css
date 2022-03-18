@@ -1,10 +1,17 @@
-div#footer {
+#footer {
   position: fixed;
-  bottom: 0px;
-  left: 0px;
+  bottom: 4rem;
   width: 100%;
-  padding: 8px;
-  text-align: center;
+  height: 2.5rem;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 7rem;
 }
 
 .bg-light {
@@ -25,8 +32,4 @@ h3 {
 
 #button-two {
   margin-left: 50%;
-}
-
-.button {
-  margin-top: 10%;
 }

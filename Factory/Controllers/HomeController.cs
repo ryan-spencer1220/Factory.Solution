@@ -20,6 +20,5 @@ namespace Factory.Controllers
         ViewData["machines"] = _db. Machines.ToList();
         return View();
       }
-
     }
 }
