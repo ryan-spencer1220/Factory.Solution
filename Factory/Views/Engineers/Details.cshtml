@@ -36,7 +36,7 @@ else
 }
 
 <p>@Html.ActionLink("Add Machine", "AddMachine", new { id = Model.EngineerId })</p>
-
-<p>@Html.ActionLink("Back to Engineers", "Index")</p>
 <p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
 <p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
+
+<p>@Html.ActionLink("Back to Engineers", "Index", routeValues: null, htmlAttributes: new { @class = "btn btn-primary", @role="button" })</p>

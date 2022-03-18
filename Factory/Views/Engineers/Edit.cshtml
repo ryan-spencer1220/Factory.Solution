@@ -4,22 +4,25 @@
 
 @model Factory.Models.Engineer
 
-<h2>Edit</h2>
+<h2 class="display-4 lh-1 mb-4">Edit @Html.DisplayFor(model => model.Name)</h2>
 
-<h4>Edit Enginner: @Html.DisplayFor(model => model.Name)</h4>
+<div class="col-12 col-lg-5">
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.EngineerId)
+    <div class="form-group">
+      <p>Engineer Name</p>
+      @Html.TextBoxFor(model => model.Name,
+      new {required="required"})
+    </div>
+    <div class="form-group">
+      <p>Engineer Status</p>
+      @Html.EditorFor(model => model.EnginnerStatus)
+    </div>
+      <input type="submit" value="Save" class="btn btn-primary"/>
+  }
+</div>
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.EngineerId)
-  <div>
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name,
-    new {required="required"})
-  </div>
-  <div class="form-group">
-    @Html.LabelFor(model => model.EnginnerStatus)
-    @Html.EditorFor(model => model.EnginnerStatus)
-  </div>
-    <input type="submit" value="Save" />
-}
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<br>
+
+<p>@Html.ActionLink("Back to Engineers", "Index", routeValues: null, htmlAttributes: new { @class = "btn btn-primary", @role="button" })</p>

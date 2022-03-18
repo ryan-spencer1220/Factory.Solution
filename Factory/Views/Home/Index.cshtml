@@ -2,24 +2,60 @@
   Layout = "_Layout";
 }
 
-<section class="bg-light">
+@using Factory.Models
+<h1 class="display-4 lh-1 mb-4">Engineers</h1>
+
+@if (((List<Factory.Models.Engineer>)ViewData["engineers"]).Count == 0)
+{
+    <section class="bg-light">
     <div class="container px-5">
         <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
             <div class="col-12 col-lg-5">
-                <h2 class="display-4 lh-1 mb-4">Welcome to Dr. Sillystringz's management system!</h2>
-                <p class="lead fw-normal text-muted mb-5 mb-lg-0">This application was designed to create, read, update, and delete engineers and machines.</p>
+                <p class="lead fw-normal text-muted mb-5 mb-lg-0">No engineers have been added yet!</p>
             </div>
-            <div class="col-sm-8 col-md-6">
-                <div class="px-5 px-sm-0"><img class="img-fluid rounded-circle" src="https://source.unsplash.com/u8Jn2rzYIps/900x900" alt="..." /></div>
-            </div>
-          <div class="row">
-            <div id="button-one">
-              <p>@Html.ActionLink("See All Machines", "Index", "Machines", routeValues: null, htmlAttributes: new { @class = "btn btn-primary", @role="button" })</p> 
-            </div>
-            <div id="button-two">
-              <p>@Html.ActionLink("See All Engineers", "Index", "Engineers", routeValues: null, htmlAttributes: new { @class = "btn btn-primary", @role="button" })</p>
-            </div>
-          </div>
         </div>
     </div>
-</section>
+  </section>
+} 
+
+  @foreach(Engineer engineer in (List<Factory.Models.Engineer>)ViewData["engineers"])
+  {
+  <section class="bg-light">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
+            <div class="col-12 col-lg-5">
+                <p class="lead fw-normal text-muted mb-5 mb-lg-0">@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</p>
+            </div>
+        </div>
+    </div>
+  </section>
+  }
+
+  <h1 class="display-4 lh-1 mb-4">Machines</h1>
+
+@if (((List<Factory.Models.Machine>)ViewData["machines"]).Count == 0)
+{
+  <section class="bg-light">
+      <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
+            <div class="col-12 col-lg-5">
+                <p class="lead fw-normal text-muted mb-5 mb-lg-0">No machines have been added yet!</p>
+            </div>
+        </div>
+    </div>
+  </section>
+} 
+
+@foreach (Machine machine in (List<Factory.Models.Machine>)ViewData["machines"])
+{
+    <section class="bg-light">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
+            <div class="col-12 col-lg-5">
+                <p class="lead fw-normal text-muted mb-5 mb-lg-0">@Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId })</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+}
