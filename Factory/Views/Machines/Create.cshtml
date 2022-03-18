@@ -9,7 +9,8 @@
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name,
+    new {required="required"})
 
     @Html.LabelFor(model => model.MachineStatus)
     @Html.TextBoxFor(model => model.MachineStatus)
@@ -20,6 +21,6 @@
     @Html.Label("Select engineer")
     @Html.DropDownList("EngineerId")
 
-    <input type="submit" value="Add new machine" class="btn btn-default" />
+    <input type="submit" value="Add new machine" class="btn btn-primary" />
 }
 <p>@Html.ActionLink("Show all machines", "Index")</p>

@@ -8,15 +8,29 @@
 
 @if (@Model.Count == 0)
 {
-  <h3>No engineers have been added yet!</h3>
+    <section class="bg-light">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
+            <div class="col-12 col-lg-5">
+                <p class="lead fw-normal text-muted mb-5 mb-lg-0">No engineers have been added yet!</p>
+            </div>
+        </div>
+    </div>
+  </section>
 } 
 
-<ul>
   @foreach(Engineer engineer in Model)
   {
-    <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
+  <section class="bg-light">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
+            <div class="col-12 col-lg-5">
+                <p class="lead fw-normal text-muted mb-5 mb-lg-0">@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</p>
+            </div>
+        </div>
+    </div>
+  </section>
   }
-</ul>
 
 <p>@Html.ActionLink("Add new engineer", "Create")</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>

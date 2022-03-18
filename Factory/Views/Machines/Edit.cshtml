@@ -6,14 +6,15 @@
 
 <h2>Edit</h2>
 
-<h4>Edit this task: @Html.DisplayFor(model => model.Name)</h4>
+<h4>Edit Machine: @Html.DisplayFor(model => model.Name)</h4>
 
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.MachineId)
 
   @Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name,
+  new {required="required"})
 
   @Html.LabelFor(model => model.MachineStatus)
   @Html.EditorFor(model => model.MachineStatus)

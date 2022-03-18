@@ -16,17 +16,23 @@
 else
 {
   <h4>Licenses:</h4>
-  <ul>
   @foreach(var join in Model.JoinEntities)
   {
-    <li>@join.Machine.Name</li>
-    @using (Html.BeginForm("DeleteMachine", "Engineers"))
-    {
-      @Html.Hidden("joinId", @join.EngineerMachineId)
-      <input type="submit" value="Delete"/>
-    }
+  <section class="bg-light">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
+            <div class="col-12 col-lg-5">
+                <p class="lead fw-normal text-muted mb-5 mb-lg-0">@join.Machine.Name</p>
+                    @using (Html.BeginForm("DeleteMachine", "Engineers"))
+                    {
+                      @Html.Hidden("joinId", @join.EngineerMachineId)
+                      <input type="submit" value="Delete" class="btn btn-primary"/>
+                    }
+            </div>
+        </div>
+    </div>
+  </section>
   }
-  </ul>
 }
 
 <p>@Html.ActionLink("Add Machine", "AddMachine", new { id = Model.EngineerId })</p>
