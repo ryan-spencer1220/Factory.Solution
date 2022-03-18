@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SillystringFactory.Models.Machine
+
+<h4>Add New Machine</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+
+    @Html.LabelFor(model => model.MachineStatus)
+    @Html.TextBoxFor(model => model.MachineStatus)
+
+    @Html.LabelFor(model => model.InspectionDate)
+    @Html.TextBoxFor(model => model.InspectionDate, new { type = "date" })
+
+    <input type="submit" value="Add new machine" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all machines", "Index")</p>
